@@ -18,10 +18,14 @@
       <module>cambridge-ognl</module>
       <module>cambridge-jaxrs</module>
       <module>cambridge-janino</module>
+	  <!--
       <module>cambridge-playframework</module>
-      <module>cambridge-spring</module>
+      -->
+	  <module>cambridge-spring</module>
+	  <!--
       <module>cambridge-struts</module>
-      <module>samples/simplewebapp</module>
+      -->
+	  <module>samples/simplewebapp</module>
       <module>samples/benchmarking</module>
    </modules>
    <build>
