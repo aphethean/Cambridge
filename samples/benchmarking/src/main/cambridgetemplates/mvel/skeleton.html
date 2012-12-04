@@ -1,0 +1,29 @@
+<!--$expressionLanguage mvel -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>%{title}</title>
+</head>
+<body>
+<div id="userBox" a:if="loggedInUser != null">
+    Hello %{loggedInUser.userName}, You have %{loggedInUser.friends.size()} friends
+</div>
+
+<h1>Entries</h1>
+<div a:foreach="entries" a:if="entries.size() > 0" a:as="entry">
+    Entry Id: %{entry.entryId}, Date: %{entry.entryDate}(dateformat:EEE, d MMM yyyy)
+    <h2>%{entry.title}</h2>
+    <div>Submitted By: %{entry.owner.userName} - %{entry.owner.email}</div>
+    <div>%{entry.body}</div>
+    <div a:if="entry.comments.size() > 0" a:foreach="entry.comments" a:as="comment">
+        <div>Comment by: %{comment.owner.userName}</div>
+        <div>%{comment.commentText}</div>
+    </div>
+    <div a:else>No comments yet</div>
+</div>
+<div a:else>
+    <td colspan="4">No Entries Found</td>
+</div>
+</body>
+</html>
